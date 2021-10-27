@@ -281,8 +281,8 @@ __idxd_perform_ops(int dev_id)
 			.op_flags = (idxd_op_batch << IDXD_CMD_OP_SHIFT) |
 				IDXD_FLAG_COMPLETION_ADDR_VALID |
 				IDXD_FLAG_REQUEST_COMPLETION,
-			.desc_addr = __desc_idx_to_iova(idxd, idxd->batch_start),
 			.completion = __desc_idx_to_iova(idxd, comp_idx),
+			.desc_addr = __desc_idx_to_iova(idxd, idxd->batch_start),
 			.size = idxd->batch_size,
 	};
 
